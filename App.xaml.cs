@@ -13,5 +13,6 @@ namespace SheetTranslator
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

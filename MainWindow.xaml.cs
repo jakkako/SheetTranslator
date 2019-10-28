@@ -50,7 +50,7 @@ namespace SheetTranslator
             baseGrid.Focus();
         }
 
-        private void sourcePath_GotFocus(object sender, RoutedEventArgs e)
+        private void SourcePath_GotFocus(object sender, RoutedEventArgs e)
         {
             if (sourcePath.Text == this.FindResource("sourcePathDEFAULT").ToString())
             {
@@ -59,7 +59,7 @@ namespace SheetTranslator
             }
         }
 
-        private void sourcePath_LostFocus(object sender, RoutedEventArgs e)
+        private void SourcePath_LostFocus(object sender, RoutedEventArgs e)
         {
             if (sourcePath.Text == String.Empty)
             {
@@ -68,7 +68,7 @@ namespace SheetTranslator
             }
         }
 
-        private void btnOpenFile_Click(object sender, RoutedEventArgs e)
+        private void Browse_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
@@ -78,7 +78,10 @@ namespace SheetTranslator
 
         private void Go_Click(object sender, RoutedEventArgs e)
         {
-            
+            string source = File.ReadAllText(sourcePath.Text);
+            string targetDir = System.IO.Path.GetDirectoryName(sourcePath.Text);
+            File.Create($"{targetDir}\\{OutputFileName.Text}.txt");
+           
         }
 
         private void Reset_Click(object sender, RoutedEventArgs e)

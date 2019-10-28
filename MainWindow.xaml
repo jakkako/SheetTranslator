@@ -27,11 +27,11 @@
             <Label Background="DarkBlue" Foreground="White" Margin="5,5">Input File</Label>
             <DockPanel Margin="10">
                 <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Right" Margin="0,0,0,10">
-                    <Button Name="btnOpenFile" Margin="5,8,0,0" Width="60" Click="btnOpenFile_Click">Browse</Button>
+                    <Button Name="btnOpenFile" Margin="5,8,0,0" Width="60" Click="Browse_Click">Browse</Button>
                 </WrapPanel>
                 <TextBox Name="sourcePath" Height="25" Foreground="DimGray" VerticalContentAlignment="Center"
-                         UIElement.GotFocus="sourcePath_GotFocus"
-                         UIElement.LostFocus="sourcePath_LostFocus"
+                         UIElement.GotFocus="SourcePath_GotFocus"
+                         UIElement.LostFocus="SourcePath_LostFocus"
                          Text="{StaticResource sourcePathDEFAULT}"/>
             </DockPanel>
         </StackPanel>

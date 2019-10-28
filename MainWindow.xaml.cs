@@ -180,6 +180,7 @@ namespace SheetTranslator
                 counter++;
             }
             File.WriteAllText($"{targetDir}\\{OutputFileName.Text}.txt", convertedSheet.ToString());
+            MessageBox.Show($"Process complete!\nConverted sheet path:\n{targetDir}\\{OutputFileName.Text}.txt", "Process Complete", 0);
 
         }
 

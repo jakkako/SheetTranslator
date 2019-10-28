@@ -12,6 +12,9 @@
         <sys:String x:Key="sourcePathDEFAULT">Enter source file path, or select with browse</sys:String>
         <sys:String x:Key="outputFileDEFAULT">Enter the desired output file name here</sys:String>
     </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="./images/background.png"></ImageBrush>
+    </Window.Background>
     <Grid Name="baseGrid" Focusable="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="305*" />
@@ -37,7 +40,7 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
             <Label Background="DarkBlue" Foreground="White" Margin="5,5">Output File</Label>
-            <TextBlock Margin="10,10,10,0" Height="35" TextWrapping="Wrap">The output file will appear in the same folder as the input file under whatever name you give it.</TextBlock>
+            <TextBlock Margin="10,10,10,0" Height="25" TextWrapping="Wrap" Background="">The output file will appear in the same directory as the input file.</TextBlock>
 
             <TextBox Name="OutputFileName" Grid.Row="2" Height="25" Width="275" HorizontalAlignment="Left" Margin="10,10,10,10" Foreground="DimGray"
                      UIElement.GotFocus="OutputFileName_GotFocus"

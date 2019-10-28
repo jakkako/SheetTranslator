@@ -79,9 +79,108 @@ namespace SheetTranslator
         private void Go_Click(object sender, RoutedEventArgs e)
         {
             string source = File.ReadAllText(sourcePath.Text);
+            StringBuilder convertedSheet = new StringBuilder(source);
             string targetDir = System.IO.Path.GetDirectoryName(sourcePath.Text);
-            File.Create($"{targetDir}\\{OutputFileName.Text}.txt");
-           
+            int counter = 0;
+            foreach (char c in source)
+            {
+                switch (c)
+                {
+                    case '1':
+                    case '8':
+                    case 't':
+                    case 's':
+                    case 'l':
+                    case 'm':
+                        convertedSheet[counter] = 'c'; 
+                        break;
+                    case '!':
+                    case '*':
+                    case 'T':
+                    case 'S':
+                    case 'L':
+                    case 'M':
+                        convertedSheet[counter] = 'C';
+                        break;
+                    case '2':
+                    case '9':
+                    case 'y':
+                    case 'd':
+                    case 'z':
+                        convertedSheet[counter] = 'd';
+                        break;
+                    case '@':
+                    case '(':
+                    case 'Y':
+                    case 'D':
+                    case 'Z':
+                        convertedSheet[counter] = 'D';
+                        break;
+                    case '3':
+                    case '0':
+                    case 'u':
+                    case 'f':
+                    case 'x':
+                        convertedSheet[counter] = 'e';
+                        break;
+                    case '4':
+                    case 'q':
+                    case 'i':
+                    case 'g':
+                    case 'c':
+                        convertedSheet[counter] = 'f';
+                        break;
+                    case '$':
+                    case 'Q':
+                    case 'I':
+                    case 'G':
+                    case 'C':
+                        convertedSheet[counter] = 'F';
+                        break;
+                    case '5':
+                    case 'w':
+                    case 'o':
+                    case 'h':
+                    case 'v':
+                        convertedSheet[counter] = 'g';
+                        break;
+                    case '%':
+                    case 'W':
+                    case 'O':
+                    case 'H':
+                    case 'V':
+                        convertedSheet[counter] = 'G';
+                        break;
+                    case '6':
+                    case 'e':
+                    case 'p':
+                    case 'j':
+                    case 'b':
+                        convertedSheet[counter] = 'a';
+                        break;
+                    case '^':
+                    case 'E':
+                    case 'P':
+                    case 'J':
+                    case 'B':
+                        convertedSheet[counter] = 'A';
+                        break;
+                    case '7':
+                    case 'r':
+                    case 'a':
+                    case 'k':
+                    case 'n':
+                        convertedSheet[counter] = 'b';
+                        break;
+                    default:
+                        convertedSheet[counter] = c;
+                        break;
+
+                }
+                counter++;
+            }
+            File.WriteAllText($"{targetDir}\\{OutputFileName.Text}.txt", convertedSheet.ToString());
+
         }
 
         private void Reset_Click(object sender, RoutedEventArgs e)

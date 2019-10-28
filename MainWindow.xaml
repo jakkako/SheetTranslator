@@ -13,7 +13,7 @@
         <sys:String x:Key="outputFileDEFAULT">Enter the desired output file name here</sys:String>
     </Window.Resources>
     <Window.Background>
-        <ImageBrush ImageSource="./images/background.png"></ImageBrush>
+        <SolidColorBrush Color="White"/>
     </Window.Background>
     <Grid Name="baseGrid" Focusable="True">
         <Grid.ColumnDefinitions>
@@ -26,6 +26,7 @@
             <RowDefinition />
             <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
+        <Label Grid.ColumnSpan="2" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Comic Sans MS">Respect Women</Label>
         <StackPanel Grid.Row="1"  Grid.ColumnSpan="2">
             <Label Background="DarkBlue" Foreground="White" Margin="5,5">Input File</Label>
             <DockPanel Margin="10">
@@ -40,7 +41,7 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
             <Label Background="DarkBlue" Foreground="White" Margin="5,5">Output File</Label>
-            <TextBlock Margin="10,10,10,0" Height="25" TextWrapping="Wrap" Background="">The output file will appear in the same directory as the input file.</TextBlock>
+            <TextBlock Margin="10,10,10,0" Height="25" TextWrapping="Wrap">The output file will appear in the same directory as the input file.</TextBlock>
 
             <TextBox Name="OutputFileName" Grid.Row="2" Height="25" Width="275" HorizontalAlignment="Left" Margin="10,10,10,10" Foreground="DimGray"
                      UIElement.GotFocus="OutputFileName_GotFocus"
